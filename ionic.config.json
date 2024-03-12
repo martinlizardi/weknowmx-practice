@@ -1,0 +1,7 @@
+{
+  "name": "We Know MX - Practice",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
