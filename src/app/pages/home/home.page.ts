@@ -1,15 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import {
-  RefresherCustomEvent,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonRefresher,
-  IonRefresherContent,
-  IonList,
-} from '@ionic/angular/standalone';
+import { IonicModule } from '@ionic/angular';
+import { RefresherCustomEvent } from '@ionic/angular/standalone';
 
 import { UsersService } from '@services/users.service';
 import { UserItemComponent } from '@components/user-item/user-item.component';
@@ -19,17 +11,7 @@ import { UserItemComponent } from '@components/user-item/user-item.component';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonRefresher,
-    IonRefresherContent,
-    IonList,
-    UserItemComponent,
-  ],
+  imports: [CommonModule, IonicModule, UserItemComponent],
 })
 export class HomePage {
   private usersService = inject(UsersService);
