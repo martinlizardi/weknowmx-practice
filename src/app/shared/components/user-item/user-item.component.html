@@ -1,6 +1,6 @@
 <ion-item [routerLink]="['/user', user.id]"  [button]="true">
   <ion-avatar aria-hidden="true" slot="start">
-    <img [alt]="user.email + ' avatar'" [src]="user.avatar" />
+    <img [alt]="user.fullname + ' avatar'" [src]="user.imageurl" />
   </ion-avatar>
-  <ion-label>{{ user.first_name }} {{ user.last_name }}</ion-label>
+  <ion-label>{{ user.fullname }}</ion-label>
 </ion-item>

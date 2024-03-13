@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { IonItem, IonAvatar, IonLabel } from '@ionic/angular/standalone';
 
-import { User } from '@interfaces/req-response.interface';
+import { UserItem } from '@interfaces/users-response.interface';
 
 @Component({
   selector: 'app-user-item',
@@ -15,5 +15,5 @@ export class UserItemComponent {
   @Input({
     required: true,
   })
-  user!: User;
+  user!: UserItem;
 }
