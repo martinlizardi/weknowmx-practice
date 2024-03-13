@@ -1,13 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="weknow-secondary">
     <ion-buttons slot="start">
-      <ion-back-button default-href="/"></ion-back-button>
+      <ion-back-button
+        color="weknow-primary"
+        text="Atrás"
+        default-href="/"
+      ></ion-back-button>
     </ion-buttons>
     <ion-title>Información del usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <app-black-shape-background />
+
   @if ( user() ) {
   <app-user-card [user]="user()!" />
 
@@ -20,7 +26,7 @@
 
   } @else {
   <div class="ion-text-center">
-    <ion-spinner></ion-spinner>
+    <ion-spinner color="weknow-primary"></ion-spinner>
   </div>
   }
 </ion-content>
