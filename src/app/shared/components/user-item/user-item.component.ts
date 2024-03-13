@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { IonItem, IonAvatar, IonLabel } from '@ionic/angular/standalone';
 
 import { User } from '@interfaces/req-response.interface';
@@ -8,7 +9,7 @@ import { User } from '@interfaces/req-response.interface';
   standalone: true,
   templateUrl: './user-item.component.html',
   styleUrls: ['./user-item.component.scss'],
-  imports: [IonItem, IonAvatar, IonLabel],
+  imports: [IonItem, IonAvatar, IonLabel, RouterModule],
 })
 export class UserItemComponent {
   @Input({
