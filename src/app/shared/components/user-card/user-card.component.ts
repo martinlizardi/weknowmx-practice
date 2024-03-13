@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import {
   IonCard,
-  IonCardHeader,
   IonCardContent,
-  IonCardTitle,
-  IonCardSubtitle,
+  IonAvatar,
+  IonImg,
+  IonList,
+  IonItem,
+  IonLabel,
 } from '@ionic/angular/standalone';
 
 import { User } from '@/app/interfaces/user.interface';
@@ -16,10 +18,12 @@ import { User } from '@/app/interfaces/user.interface';
   styleUrls: ['./user-card.component.scss'],
   imports: [
     IonCard,
-    IonCardHeader,
     IonCardContent,
-    IonCardTitle,
-    IonCardSubtitle,
+    IonAvatar,
+    IonImg,
+    IonList,
+    IonItem,
+    IonLabel,
   ],
 })
 export class UserCardComponent {

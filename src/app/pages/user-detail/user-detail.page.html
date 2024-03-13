@@ -1,24 +1,32 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="weknow-secondary">
     <ion-buttons slot="start">
-      <ion-back-button default-href="/"></ion-back-button>
+      <ion-back-button
+        color="weknow-primary"
+        text="Atrás"
+        default-href="/"
+      ></ion-back-button>
     </ion-buttons>
-    <ion-title>User detail</ion-title>
+    <ion-title>Información del usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">user-detail</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <app-black-shape-background />
 
   @if ( user() ) {
-  <section>
-    <app-user-card [user]="user()!" />
-  </section>
+  <app-user-card [user]="user()!" />
+
+  <app-field-list title="Compañía" [fields]="user()!.companyfields" />
+
+  <app-field-list
+    title="Información personal"
+    [fields]="user()!.personalfields"
+  />
+
   } @else {
-  <p>Loading...</p>
+  <div class="ion-text-center">
+    <ion-spinner color="weknow-primary"></ion-spinner>
+  </div>
   }
 </ion-content>

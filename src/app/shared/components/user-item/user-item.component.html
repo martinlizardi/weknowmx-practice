@@ -1,6 +1,11 @@
-<ion-item [routerLink]="['/user', user.id]"  [button]="true">
+<ion-item
+  [routerLink]="['/user', user.id]"
+  [button]="true"
+  color="weknow-primary"
+  class="user-item"
+>
   <ion-avatar aria-hidden="true" slot="start">
     <img [alt]="user.fullname + ' avatar'" [src]="user.imageurl" />
   </ion-avatar>
-  <ion-label>{{ user.fullname }}</ion-label>
+  <ion-label class="ion-text-wrap">{{ user.fullname }}</ion-label>
 </ion-item>

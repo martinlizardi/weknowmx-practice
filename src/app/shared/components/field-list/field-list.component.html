@@ -1,0 +1,14 @@
+<ion-list [inset]="true">
+  <ion-list-header>
+    <ion-label>{{ title }}</ion-label>
+  </ion-list-header>
+
+  @for (field of fields; track $index) {
+  <ion-item lines="none">
+    <ion-label>
+      <p>{{ field.name }}</p>
+      <h2>{{ field.data }}</h2>
+    </ion-label>
+  </ion-item>
+  }
+</ion-list>
