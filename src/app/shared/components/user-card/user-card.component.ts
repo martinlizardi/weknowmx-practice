@@ -1,4 +1,3 @@
-import { User } from '@/app/interfaces/req-response.interface';
 import { Component, Input } from '@angular/core';
 import {
   IonCard,
@@ -7,6 +6,8 @@ import {
   IonCardTitle,
   IonCardSubtitle,
 } from '@ionic/angular/standalone';
+
+import { User } from '@/app/interfaces/user.interface';
 
 @Component({
   selector: 'app-user-card',
@@ -23,8 +24,4 @@ import {
 })
 export class UserCardComponent {
   @Input({ required: true }) user!: User;
-
-  get fullName() {
-    return `${this.user.first_name} ${this.user.last_name}`;
-  }
 }

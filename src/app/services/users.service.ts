@@ -1,17 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
-import { map } from 'rxjs';
 
-import {
-  User,
-  UserResponse,
-  UsersResponse,
-} from '@interfaces/req-response.interface';
+import { UserItem, UsersResponse } from '@interfaces/users-response.interface';
+import { User } from '@interfaces/user.interface';
 
 import { environment as env } from '@/environments/environment';
 
 interface State {
-  users: User[];
+  users: UserItem[];
   loading: boolean;
 }
 
@@ -30,17 +26,28 @@ export class UsersService {
   public readonly loading = computed(() => this.#state().loading);
 
   constructor() {
-    this.http.get<UsersResponse>(`${env.apiUrl}users`).subscribe((res) => {
-      this.#state.set({
-        loading: false,
-        users: res.data,
+    this.http
+      .get<UsersResponse>(env.apiUrl, {
+        params: {
+          wsfunction: 'local_weknow_get_users_list',
+        },
+      })
+      .subscribe((res) => {
+        console.log('res', res);
+
+        this.#state.set({
+          loading: false,
+          users: res.users,
+        });
       });
-    });
   }
 
   getUserById(id: string) {
-    return this.http
-      .get<UserResponse>(`${env.apiUrl}users/${id}`)
-      .pipe(map((res) => res.data));
+    return this.http.get<User>(env.apiUrl, {
+      params: {
+        wsfunction: 'local_weknow_get_user_details',
+        userid: id,
+      },
+    });
   }
 }
