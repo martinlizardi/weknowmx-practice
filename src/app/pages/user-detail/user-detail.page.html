@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="/"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-white">Información del usuario</ion-title>
+    <ion-title>Información del usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,10 +11,7 @@
   @if ( user() ) {
   <app-user-card [user]="user()!" />
 
-  <app-field-list
-    title="Compañía"
-    [fields]="user()!.companyfields"
-  />
+  <app-field-list title="Compañía" [fields]="user()!.companyfields" />
 
   <app-field-list
     title="Información personal"
@@ -22,6 +19,8 @@
   />
 
   } @else {
-  <p>Loading...</p>
+  <div class="ion-text-center">
+    <ion-spinner></ion-spinner>
+  </div>
   }
 </ion-content>
