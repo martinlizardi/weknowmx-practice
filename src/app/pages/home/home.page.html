@@ -15,7 +15,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
+  <ion-list [inset]="true">
     @for (user of users; track user.id) {
       <app-user-item [user]="user" />
     }
