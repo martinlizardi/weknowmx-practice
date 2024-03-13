@@ -4,6 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@/*": ["src/*"],
       "@interfaces/*": ["src/app/interfaces/*"]
     },
     "outDir": "./dist/out-tsc",
