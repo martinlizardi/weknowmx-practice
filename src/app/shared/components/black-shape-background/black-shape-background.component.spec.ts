@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { BlackShapeBackgroundComponent } from './black-shape-background.component';
 
-describe('BlackShapeBackgroundComponent', () => {
+fdescribe('BlackShapeBackgroundComponent', () => {
   let component: BlackShapeBackgroundComponent;
   let fixture: ComponentFixture<BlackShapeBackgroundComponent>;
 
