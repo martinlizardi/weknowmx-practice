@@ -1,16 +1,14 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
 
 import { BlackShapeBackgroundComponent } from './black-shape-background.component';
 
-fdescribe('BlackShapeBackgroundComponent', () => {
+describe('BlackShapeBackgroundComponent', () => {
   let component: BlackShapeBackgroundComponent;
   let fixture: ComponentFixture<BlackShapeBackgroundComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ BlackShapeBackgroundComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [BlackShapeBackgroundComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(BlackShapeBackgroundComponent);
