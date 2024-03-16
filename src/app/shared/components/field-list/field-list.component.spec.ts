@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 
 import { FieldListComponent } from './field-list.component';
 import { query, queryAll, queryByDebugElement } from '@/testing-utils';
@@ -12,7 +11,7 @@ describe('FieldListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot(), FieldListComponent],
+      imports: [FieldListComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FieldListComponent);
